@@ -1,0 +1,16 @@
+*{margin: 0;padding: 0;list-style: none;}
+
+#order_nav {  position: relative; background: #fff; position: relative; }
+#order_nav .list { width: 936px; margin: 200px auto; }
+#order_nav .list li{width:116px; height:116px; float:left; border-radius: 50%;  margin: 0 20px 80px 20px; position: relative; cursor: pointer; -webkit-transition: .4s all;}
+#order_nav .list li .ico { width: 102px; height: 102px; position: absolute; left: 7px; top: 7px; background: #424242 url(../image/rotate.png); border-radius:50%; -webkit-transition: .4s all;}
+#order_nav .list li ._1{background-position:0px 0px;}
+#order_nav .list li ._2{background-position:-102px 0px;}
+#order_nav .list li ._3{background-position:-204px 0px;}
+#order_nav .list li ._4{background-position:-306px 0px;}
+#order_nav .list li ._5{background-position:-408px 0px;}
+#order_nav .list li ._6{background-position:-513px 0px;}
+#order_nav .list li p {width:100%; position:absolute; top:130px; text-align:center; left:0px;}
+#order_nav .list li p span {font-size: 16px; color: #414141; display: block; font-weight: bold;}
+#order_nav .list li.on{background: rgba(0,0,0,.5); }
+#order_nav .list li.on .ico{-webkit-transform:rotate(360deg); background-color: #0ff;}
