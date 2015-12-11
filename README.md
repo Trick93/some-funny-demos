@@ -1,3 +1,3 @@
 # -CSS3-
-Everyday Training
-这是训练 纯CSS3特效
+Training
+纯CSS3特效
