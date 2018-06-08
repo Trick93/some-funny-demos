@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>input框聚焦动画</title>
+  <style>
+    body{
+      background: #6c5ce7;
+    }
+    .wrap{
+      width: 400px;
+      margin: 200px auto;
+      padding: 20px;
+      background: #a29bfe;
+      border-radius: 15px;
+      filter: drop-shadow(0 0 0.75rem #a29bfe);
+    }
+    .input{
+      line-height: 25px;
+      outline: none;
+      padding-left: 8px;
+    }
+    .control{
+      margin: 20px 0px;
+    }
+    label{
+      width: 100px;
+      display: inline-block;
+    }
+    #animate_border{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      border: 1px solid #6c5ce7;
+      box-shadow: 0 0 3px #6c5ce7;
+      z-index: 11;
+    }
+  </style>
+</head>
+<body>
+  <div id="animate_border"></div>
+  <div class="columns">
+    <section class="wrap">
+      <div class="field">
+        <div class="control">
+          <label>用户名：</label>
+          <input class="input" type="text" placeholder="Primary input">
+        </div>
+        <div class="control">
+          <label>密码：</label>
+          <input class="input" type="text" placeholder="Primary input">
+        </div>
+        <div class="control">
+          <label>邮箱：</label>
+          <input class="input" type="text" placeholder="Primary input">
+        </div>
+      </div>
+    </section>
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script>
+    window.onload = function(){
+      var inputs = document.getElementsByTagName("input")
+      var animate_border = document.getElementById("animate_border")
+      for (let i=0; i<inputs.length; i++) {
+        inputs[i].onfocus = function(){change_border_to(this)}
+      }
+      function change_border_to(obj) {
+        var this_width = obj.offsetWidth
+        var this_height = obj.offsetHeight
+        var this_left = obj.offsetLeft
+        var this_top = obj.offsetTop
+        $("#animate_border").animate({
+          width: this_width,
+          height: this_height,
+          left: this_left - 1,
+          top: this_top - 1
+        })
+      }
+    }
+  </script>
+</body>
+</html>
